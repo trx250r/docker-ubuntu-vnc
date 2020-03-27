@@ -25,7 +25,7 @@ build:
 .PHONY: run
 run:
 	@echo "$(OK_COLOR)==>$(NO_COLOR) Running $(REPOSITORY):$(TAG)"
-	@docker run --rm -ti -p 5901:5901 --name $(NAME) $(REPOSITORY):$(TAG)
+	@docker run --rm -ti -p 5991:5901 --name $(NAME) $(REPOSITORY):$(TAG)
 
 .PHONY: shell
 shell:
