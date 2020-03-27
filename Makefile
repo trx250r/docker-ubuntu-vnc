@@ -1,4 +1,4 @@
-REPOSITORY?=panta/docker-ubuntu-vnc
+REPOSITORY?=trx250r/docker-ubuntu-vnc
 NAME?=docker-ubuntu
 TAG?=latest
 

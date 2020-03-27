@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER Marco Pantaleoni <marco.pantaleoni@gmail.com>
 
-RUN echo "Europe/Rome" > /etc/timezone
+RUN echo "America/Chicago" > /etc/timezone
 # RUN sudo ln -fs /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
 RUN apt-get update -q && \
