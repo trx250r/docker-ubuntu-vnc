@@ -20,6 +20,9 @@ RUN apt-get update -q && \
     apt-get install -y --no-install-recommends python-pip python-dev python-qt4 && \
     apt-get install -y --no-install-recommends libssl-dev && \
     apt-get install -y --no-install-recommends net-tools dnsutils iputils-ping traceroute && \
+    apt-get install -y --no-install-recommends autocutsel openssh-client openssh-server && \
+    apt-get install -y --no-install-recommends nodejs npm && \
+    apt-get install -y --no-install-recommends firefox && \
     apt-get autoclean -y && \
     apt-get autoremove -y && \
     apt-get clean && \
