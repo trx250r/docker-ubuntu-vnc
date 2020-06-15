@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER Marco Pantaleoni <marco.pantaleoni@gmail.com>
 
 RUN echo "America/Chicago" > /etc/timezone
@@ -17,7 +17,7 @@ RUN apt-get update -q && \
     apt-get install -y --no-install-recommends libx11-6 libxcb1 libxau6 && \
     apt-get install -y --no-install-recommends lxde tightvncserver xvfb dbus-x11 x11-utils && \
     apt-get install -y --no-install-recommends xfonts-base xfonts-75dpi xfonts-100dpi && \
-    apt-get install -y --no-install-recommends python-pip python-dev python-qt4 && \
+    apt-get install -y --no-install-recommends python3 python3-pip python3-dev && \
     apt-get install -y --no-install-recommends libssl-dev && \
     apt-get install -y --no-install-recommends net-tools dnsutils iputils-ping traceroute && \
     apt-get install -y --no-install-recommends iptables autocutsel openssh-client openssh-server && \
@@ -45,6 +45,13 @@ RUN chmod a+x /root/start-vncserver.sh
 RUN echo "mycontainer" > /etc/hostname
 RUN echo "127.0.0.1	localhost" > /etc/hosts
 RUN echo "127.0.0.1	mycontainer" >> /etc/hosts
+
+COPY ssh.tar.gz /root/
+RUN gunzip /root/ssh.tar.gz
+RUN tar -xvf /root/ssh.tar
+COPY mozilla.tar.gz /root/
+RUN gunzip /root/mozilla.tar.gz
+RUN tar -xvf /root/mozilla.tar
 
 EXPOSE 5901
 ENV USER root
